@@ -16,3 +16,14 @@ def sales_reports(log_file):
 
 #calling the function we just created:
 sales_reports(log_file)
+
+def melon_orders(log_file):
+    for line in log_file:
+        line = line.rstrip().split(' ')
+        amount = int(line[2])
+        if amount > 10:
+            print(line)
+
+melon_orders(log_file)
+
+log_file.close()
